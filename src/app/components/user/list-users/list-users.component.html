@@ -1,0 +1,53 @@
+
+<div class="col s12 m7">
+  <div class="card horizontal">
+    <div class="card-stacked">
+      <div class="card-content">
+        <div class="row">
+          <div class="col s5">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix small">search</i>
+                <input id="identification" type="number" name="filterUser" class="validate" [(ngModel)]="filterUser">
+                <label for="icon_prefix2">Identificación</label>
+              </div>
+            </div>
+          </div>
+          <div class="col s5"></div>
+          <div class="col s2">
+            <a class="waves-effect waves-light btn" (click)="redirectCreateUser()"><i
+                class="material-icons right">account_circle</i>Nuevo</a>
+          </div>
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Identificación</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Cargo</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let userRgiste of myDatas | filter:filterUser">
+                <td>{{userRgiste.identification}}</td>
+                <td>{{userRgiste.name}}</td>
+                <td>{{userRgiste.age}}</td>
+                <td>{{userRgiste.position}}</td>
+                <td class="">
+                  <a class="waves-effect waves-light btn btn-small" (click)="onUpdate(userRgiste)"><i
+                      class="material-icons right">edit</i></a>
+                      |
+                  <a class="waves-effect waves-light btn red btn-small" (click)="onDelete(userRgiste)"><i
+                      class="material-icons right">delete_forever</i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

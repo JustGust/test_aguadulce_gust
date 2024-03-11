@@ -1,0 +1,15 @@
+<nav>
+    <app-navbar></app-navbar>
+</nav>
+<div class="div-container container">
+    <div *ngIf="showAlert" class="materialert info">
+        {{ message }}
+     </div>
+     <div *ngIf="showAlertError" class="materialert error">
+        {{ message }}
+     </div>
+    <router-outlet></router-outlet>
+</div>
+<footer>
+    <app-footer></app-footer>
+</footer>

@@ -1,0 +1,22 @@
+<div class="col s12 m7">
+    <h4 class="header">Eliminar registro</h4>
+    <div class="card horizontal">
+        <div class="card-stacked center-align">
+            <div class="card-content" *ngIf="myDatas">
+                <p><strong>Identificación: {{myDatas.identification}} </strong></p>
+                <p><strong>Nombre: </strong>{{myDatas.name}}</p>
+                <p><strong>Edad: </strong>{{myDatas.age}}</p>
+                <p><strong>Cargo: </strong>{{myDatas.position}}</p>
+            </div>
+            <div class="card-action">
+                <div class="">
+                    <a class="waves-effect waves-light btn  offset-m3" [routerLink]="'/lista'">cancel<i
+                            class="material-icons right">cancelar</i></a>
+                            |
+                    <a class="waves-effect red btn" (click)="onDelete(myDatas.identification)">Borrar<i
+                            class="material-icons right">delete_forever</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

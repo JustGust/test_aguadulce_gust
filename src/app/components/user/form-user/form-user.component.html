@@ -1,0 +1,44 @@
+<div class="div-form row">
+    <form [formGroup]="formUser" (ngSubmit)="onSaveOrUpdateData()" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="identification" type="text" formControlName="identification" [class.is-invalid]= 'identNoValid'>
+          <label for="identification">Identificación*</label>
+          <div *ngIf="identNoValid" class="materialert error">
+            Oh! Este campo debe contener un mínimo de 4 caracteres y debe ser numérico
+         </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="name" type="text" class="validate" formControlName="name" [class.is-invalid]= 'nameNoValid'>
+          <label for="name">Nombre*</label>
+            <div *ngIf="nameNoValid" class="materialert error">
+		        Oh! Este campo debe contener un mínimo de 2 caracteres, estos sin ser caracteres especiales
+		     </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="age" type="text" class="validate" formControlName="age" [class.is-invalid]= 'ageNoValid'>
+          <label for="age">Edad</label>
+          <div *ngIf="ageNoValid" class="materialert error">
+            Oh! Este campo debe contener máximo 3 caracteres
+         </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="job" type="text" class="validate" formControlName="job">
+          <label for="job">Cargo</label>
+        </div>
+      </div>
+      <div class="center-align">
+        <a class="waves-effect waves-light btn  offset-m3" [routerLink]="'/lista'">Cancelar<i
+            class="material-icons right">cancel</i></a>
+            |
+        <button  type="submit" class="waves-effect waves-light btn  offset-m3">Guardar<i
+            class="material-icons right">save</i></button>
+      </div>
+    </form>
+  </div>
